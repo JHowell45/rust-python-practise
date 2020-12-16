@@ -1,7 +1,3 @@
 .idea
-
-# Rust:
-**/target/
-
-# Python:
 *.pyc
+**/target/
