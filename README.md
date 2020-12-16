@@ -32,7 +32,7 @@ function create-rust-python-lib() {
 
   # Create template lib.rs file:
   cd src
-  echo "use pyo3::prelude::*;\nuse pyo3::wrap_pyfunction;\n\n#[pyfunction]\nfn sum_as_string(a: usize, b: usize) -> PyResult<String> {\n\tOk((a + b).to_string())\n}\n\n#[pymodule]\nfn ${NAME}(_py: Python, m: &PyModule) -> PyResult<()> {\n\tm.add_function(wrap_pyfunction!(sum_as_string, m)?)?;\n\n\tOk(())\n}" > lib.rs
+  echo "use pyo3::prelude::*;\nuse pyo3::wrap_pyfunction;\n\n/// the docs is in a comment above the pyfunction!\n#[pyfunction]\nfn sum_as_string(a: usize, b: usize) -> PyResult<String> {\n\tOk((a + b).to_string())\n}\n\n/// the docs is in a comment above the pymodule!\n#[pymodule]\nfn ${NAME}(_py: Python, m: &PyModule) -> PyResult<()> {\n\tm.add_function(wrap_pyfunction!(sum_as_string, m)?)?;\n\n\tOk(())\n}" > lib.rs
 
   cd $TEMP
 }
