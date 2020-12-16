@@ -1,16 +1,13 @@
 [package]
-name = "tree"
+name = "template"
 version = "0.1.0"
-authors = ["Jacob Howell <>"]
+authors = ["name <name@email.com>"]
 edition = "2018"
 
 [lib]
-name = "tree"
+name = "template"
 crate-type = ["cdylib"]
 
 [dependencies.cpython]
 version = "0.5"
 features = ["extension-module"]
-
-[dependencies.trees]
-version = "0.3.0"
