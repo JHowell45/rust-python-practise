@@ -19,11 +19,11 @@ mod tests {
         assert_eq!(2 + 2, 4);
     }
 
-    #[test]
-    fn example_test() {
-        let gil = Python::acquire_gil();
-        let py = gil.python();
-        assert_eq!(test_func(py), PyResult::Ok("Hello World"));
-    }
+    // #[test]
+    // fn example_test() {
+    //     let gil = Python::acquire_gil();
+    //     let py = gil.python();
+    //     assert_eq!(test_func(py), PyResult::Ok("Hello World"));
+    // }
 }
 
