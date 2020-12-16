@@ -1,10 +1,10 @@
 [package]
-name = "string-sum"
+name = "template"
 version = "0.1.0"
 edition = "2018"
 
 [lib]
-name = "string_sum"
+name = "template"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]

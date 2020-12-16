@@ -1,4 +1,4 @@
-from template.string_sum import sum_as_string
+from template.template import sum_as_string
 
 
 def main():
