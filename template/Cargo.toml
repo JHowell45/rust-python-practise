@@ -8,6 +8,6 @@ edition = "2018"
 name = "template"
 crate-type = ["cdylib"]
 
-[dependencies.cpython]
-version = "0.5"
+[dependencies.pyo3]
+version = "0.12.4"
 features = ["extension-module"]

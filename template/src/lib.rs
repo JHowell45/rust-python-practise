@@ -1,29 +1,16 @@
-use cpython::{PyResult, Python, py_module_initializer, py_fn};
+use pyo3::prelude::*;
+use pyo3::wrap_pyfunction;
 
-py_module_initializer!(template, |py, m| {
-    m.add(py, "__doc__", "docs goes here!")?;
-    m.add(py, "test", py_fn!(py, test_func()))?;
+/// Formats the sum of two numbers as string.
+#[pyfunction]
+fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
+    Ok((a + b).to_string())
+}
+
+/// A Python module implemented in Rust.
+#[pymodule]
+fn string_sum(py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
+
     Ok(())
-});
-
-fn test_func(_py: Python) -> PyResult<&'static str> {
-    Ok("Hello World")
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-
-    // #[test]
-    // fn example_test() {
-    //     let gil = Python::acquire_gil();
-    //     let py = gil.python();
-    //     assert_eq!(test_func(py), PyResult::Ok("Hello World"));
-    // }
-}
-
