@@ -1,0 +1,16 @@
+[package]
+name = "tree"
+version = "0.1.0"
+authors = ["Jacob Howell <>"]
+edition = "2018"
+
+[lib]
+name = "tree"
+crate-type = ["cdylib"]
+
+[dependencies.cpython]
+version = "0.5"
+features = ["extension-module"]
+
+[dependencies.trees]
+version = "0.3.0"
